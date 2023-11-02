@@ -7,7 +7,7 @@
 //delete a party (event listener, button, click)
 //DELETE a party from the API.
 
-const API_URL = "https://fsa-crud-2aa9294fe819.herokuapp.com/api/2308-ACC-PT-WEB-PT-A/events";
+const API_URL = 'https://fsa-crud-2aa9294fe819.herokuapp.com/api/2308-ACC-PT-WEB-PT-A/events';
 
 const state = {
     parties: [],
@@ -40,7 +40,7 @@ async function addParty(event) {
     event.preventDefault();
     await createParty(
         addPartyForm.title.value,
-        addPartyForm.date.value,
+        new Date(addPartyForm.date.value).toISOString(),
         addPartyForm.location.value,
         addPartyForm.description.value,
     );
